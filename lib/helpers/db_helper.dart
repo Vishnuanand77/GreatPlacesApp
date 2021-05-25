@@ -20,8 +20,9 @@ class DBHelper {
     );
   }
 
-  static Future<void> getData(String table) async {
+  //Fetching data from the database
+  static Future<List<Map<String, dynamic>>> getData(String table) async {
     final db = await DBHelper.database();
-    db.query(table);
+    return db.query(table);
   }
 }
